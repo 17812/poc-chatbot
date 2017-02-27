@@ -1,0 +1,15 @@
+---
+declared-services:
+  poc-chatbot:
+    label: conversation
+    plan: free
+applications:
+- name: conversation-demo-watson
+  command: npm start
+  path: .
+  memory: 256M
+  instances: 1
+  services:
+  - poc-chatbot
+  env:
+    NPM_CONFIG_PRODUCTION: false
